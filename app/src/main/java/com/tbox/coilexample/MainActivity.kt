@@ -11,7 +11,9 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.material3.Button
+import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.Text
+import androidx.compose.ui.Alignment
 import coil.compose.AsyncImage
 import com.tbox.coilexample.ui.theme.CoilExampleTheme
 import androidx.compose.ui.Modifier
@@ -39,14 +41,18 @@ class MainActivity : ComponentActivity() {
                         .fillMaxSize()
                 ) {
 
-                    //İlk resmi SubcomposeAsyncImage ile yükleme
                     SubcomposeAsyncImage(
                         model = imageUrl,
                         contentDescription = null,
                         modifier = Modifier
                             .fillMaxWidth()
-                            .aspectRatio(1280f/847f) //Oran
+                            .aspectRatio(1280f / 847f), // Oran
+                        loading = {
+                            // Yükleniyor simgesi veya animasyon gösterilebilir
+                            CircularProgressIndicator(modifier = Modifier.align(Alignment.Center))
+                        }
                     )
+
 
                     //İkinci resmi AsyncImage ile yükleme
                     AsyncImage(

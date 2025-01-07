@@ -33,8 +33,6 @@ class MyApplication: Application(), ImageLoaderFactory {
                     .directory(cacheDir) // Disk önbelleği için dizin belirler
                     .build()
             }
-            // Hata ayıklamak için Logger
-            .logger(DebugLogger())
             .build()
     }
 }

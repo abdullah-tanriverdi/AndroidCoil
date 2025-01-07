@@ -1,4 +1,4 @@
-package com.tbox.coilexample.ui.theme
+package com.tbox.coilexample
 
 import android.app.Application
 import coil.ImageLoader
